@@ -12,7 +12,7 @@ import Home from './pages/Home'
 import SearchListings from './pages/SearchListings'
 import Join from './pages/CreateAccount'
 
-class App extends Component {
+export default class App extends Component {
   render() {
     const {
       logged_in,
@@ -29,7 +29,7 @@ class App extends Component {
     return(
 
           <Router>
-            <Navigation />
+            <Navigation {...this.props} />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/home" component={Home} />
@@ -43,4 +43,3 @@ class App extends Component {
   }
 }
 
-export default App
