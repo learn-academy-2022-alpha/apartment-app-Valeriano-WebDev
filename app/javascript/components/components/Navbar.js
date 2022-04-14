@@ -1,13 +1,18 @@
 import React, { Component } from 'react'
-import { Nav, NavItem } from 'reactstrap'
+import {Navbar, Nav, NavItem, NavbarBrand, NavbarToggler, Collapse} from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 
 class Navigation extends Component {
     render() {
         return(
             <>
+                <Navbar color="danger" dark expand="md" full>
+                    <NavbarBrand href="/">
+                        Virtual Apartment App
+                    </NavbarBrand>
+                    <NavbarToggler onClick={function noRefCheck(){}} />
+                    <Collapse navbar>
                 <Nav>
-                    <h3>Virtual Apartment App </h3>
                     <NavItem>
                         <NavLink to="/" className="nav-link">Home</NavLink>
                     </NavItem>
@@ -24,6 +29,8 @@ class Navigation extends Component {
                         <NavLink to="/createanaccount" className="nav-link">Sign Up!</NavLink>
                     </NavItem>
                 </Nav>
+                    </Collapse>
+                </Navbar>
             </>
         )
     }
